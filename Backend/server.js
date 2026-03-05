@@ -5,6 +5,7 @@ import { testConnection } from "./config/database.js";
 import authRoute from "./routes/autRoute.js";
 import courseRoute from "./routes/CourseRoutes.js";
 import resourceRoute from "./routes/ResourceRoute.js";
+import ExamenRoute from "./routes/NationalExamRoute.js";
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoute);
 app.use("/api/courses", courseRoute);
 app.use("/api/resources", resourceRoute);
-
+app.use("/api/exams", ExamenRoute);
 app.listen(PORT, async () => {
   await testConnection();
   console.log(`Server is running on port ${PORT}`);
