@@ -98,7 +98,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="border-y border-orange-200 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
@@ -112,7 +111,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Filières Section */}
       <section className="py-28 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -182,7 +180,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Examens Nationaux Section */}
       <section className="py-28 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 border border-orange-200 rounded-3xl p-12 md:p-16 text-center overflow-hidden">
