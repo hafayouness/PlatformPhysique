@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { queryKeys } from "../constants/queryKeys";
-import { coursesService } from "../services/courses.service";
+import { coursesService } from "../services/CourseService";
 
 export const useCourses = (filters = {}) =>
   useQuery({

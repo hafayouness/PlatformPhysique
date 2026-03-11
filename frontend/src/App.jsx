@@ -7,6 +7,7 @@ import Footer from "./components/layout/footer";
 import HomePage from "./pages/Home/HomePage";
 import RegisterPage from "./pages/auth/register";
 import LoginPage from "./pages/auth/login";
+import CoursesPage from "./pages/courses/CoursesPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +30,7 @@ export default function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/courses" element={<CoursesPage />} />
             </Routes>
           </main>
           <Footer />
