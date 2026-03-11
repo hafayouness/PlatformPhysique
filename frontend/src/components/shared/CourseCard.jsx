@@ -85,7 +85,7 @@ export default function CourseCard({ course }) {
           transform: translateY(-3px);
         }
 
-        /* ── HEADER ── */
+        
         .rcc-header {
           padding: 18px 20px 16px;
           background: linear-gradient(135deg, var(--rcc-from), var(--rcc-to));
@@ -145,7 +145,7 @@ export default function CourseCard({ course }) {
           overflow: hidden;
         }
 
-        /* ── RESOURCES ── */
+       
         .rcc-resources {
           padding: 14px 16px;
           display: flex;
@@ -285,7 +285,6 @@ export default function CourseCard({ course }) {
           "--rcc-dark": t.dark,
         }}
       >
-        {/* header */}
         <div className="rcc-header">
           <div className="rcc-header-row">
             <div className="rcc-icon-wrap">{t.icon}</div>
