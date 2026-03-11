@@ -60,8 +60,8 @@ export const FILIERES_COURSE = [
 ];
 
 export const LEVELS = [
-  { key: "", label: "Tout niveau", short: "Tous" },
-  { key: "1bac", label: "1ère Bac", short: "1BAC" },
+  // { key: "", label: "Tout niveau", short: "Tous" },
+  // { key: "1bac", label: "1ère Bac", short: "1BAC" },
   { key: "2bac", label: "2ème Bac", short: "2BAC" },
 ];
 
