@@ -1,5 +1,5 @@
-import Course from "../models/Course.js";
-import Resource from "../models/Resource.js";
+import db from "../models/index.js";
+const { Course, Resource } = db;
 
 export const getAllCourses = async (req, res) => {
   try {

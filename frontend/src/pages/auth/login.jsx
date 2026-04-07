@@ -1,30 +1,38 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { authService } from "../../services/authServices";
+
+import { useAuthStore } from "../../stores/authStore";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({ email: "", mot_de_passe: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { login } = useAuthStore();
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setLoading(true);
     try {
-      const user = await authService.login(form);
+      const user = await login(form.email, form.mot_de_passe);
+      if (!user) throw new Error("User undefined");
       navigate(user.role === "admin" ? "/admin" : "/courses");
     } catch (err) {
-      setError(
-        err.response?.data?.message || "Email ou mot de passe incorrect",
-      );
+      
+      if (err.response) {
+        setError(
+          err.response?.data?.message || "Email ou mot de passe incorrect",
+        );
+      }
+   
     } finally {
       setLoading(false);
     }
   };
+
+
 
   return (
     <>
@@ -242,8 +250,8 @@ export default function LoginPage() {
                   className="rp-input"
                   type="password"
                   required
-                  value={form.password}
-                  onChange={set("password")}
+                  value={form.mot_de_passe}
+                  onChange={set("mot_de_passe")}
                   placeholder="••••••••"
                   autoComplete="current-password"
                 />
