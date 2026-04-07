@@ -10,9 +10,9 @@ const generateToken = (userId) => {
 
 export const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, mot_de_passe, role } = req.body;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !mot_de_passe) {
       return res.status(400).json({
         success: false,
         message: "Veuillez remplir tous les champs",
@@ -28,13 +28,13 @@ export const register = async (req, res) => {
     }
 
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(mot_de_passe, salt);
 
     const user = await User.create({
       name,
       email,
       mot_de_passe: hashedPassword,
-      role: role || "Opérateur",
+      role: role || "student",
     });
 
     const token = generateToken(user.id);
@@ -64,9 +64,9 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, mot_de_passe } = req.body;
 
-    if (!email || !password) {
+    if (!email || !mot_de_passe) {
       return res.status(400).json({
         success: false,
         message: "Email et mot de passe requis",
@@ -82,7 +82,10 @@ export const login = async (req, res) => {
       });
     }
 
-    const isPasswordValid = await bcrypt.compare(password, user.mot_de_passe);
+    const isPasswordValid = await bcrypt.compare(
+      mot_de_passe,
+      user.mot_de_passe,
+    );
 
     if (!isPasswordValid) {
       return res.status(401).json({

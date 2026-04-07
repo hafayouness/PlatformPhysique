@@ -4,7 +4,7 @@ import { authService } from "../../services/authServices";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({ name: "", email: "", mot_de_passe: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -255,8 +255,8 @@ export default function RegisterPage() {
                   type="password"
                   required
                   minLength={6}
-                  value={form.password}
-                  onChange={set("password")}
+                  value={form.mot_de_passe}
+                  onChange={set("mot_de_passe")}
                   placeholder="Minimum 6 caractères"
                   autoComplete="new-password"
                 />

@@ -7,12 +7,12 @@ export const useAuthStore = create(
     (set, get) => ({
       user: null,
       token: null,
-
-      login: async (email, password) => {
-        const data = await authService.login({ email, password });
-        localStorage.setItem("token", data.token);
-        set({ user: data.user, token: data.token });
-        return data.user;
+      login: async (email, mot_de_passe) => {
+        const response = await authService.login({ email, mot_de_passe });
+        const { token, user } = response.data;
+        localStorage.setItem("token", token);
+        set({ user, token });
+        return user;
       },
 
       logout: () => {

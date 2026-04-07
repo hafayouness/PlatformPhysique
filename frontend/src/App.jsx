@@ -10,6 +10,7 @@ import LoginPage from "./pages/auth/login";
 import CoursesPage from "./pages/courses/CoursesPage";
 import CourseDetailPage from "./pages/courses/CourseDetailPage";
 import ExamsPage from "./pages/examens/ExamsPage";
+import AdminPage from "./pages/admin/AdminPage";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -34,6 +35,7 @@ export default function App() {
               <Route path="/courses" element={<CoursesPage />} />
               <Route path="/courses/:id" element={<CourseDetailPage />} />
               <Route path="/exams" element={<ExamsPage />} />
+              <Route path="/admin" element={<AdminPage />} />
             </Routes>
           </main>
           <Footer />
