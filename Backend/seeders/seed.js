@@ -60,7 +60,7 @@ const run = async () => {
         title: "Mécanique — Les mouvements",
         description: "Types de mouvements et caractéristiques cinématiques.",
         level: "1bac",
-        chapter: "Chapitre 1",
+        chapter: "",
         filiere: "ALL",
       },
       {
@@ -120,13 +120,14 @@ const run = async () => {
     ]);
 
     // ── 2BAC Sciences Physiques (SP) ───────────────────────────────
+    // ── 2BAC Sciences Physiques (SP) ───────────────────────────────
     const cSP = await Course.bulkCreate([
       {
         title: "Mécanique — Dynamique du point matériel",
         description:
           "Les trois lois de Newton, principe fondamental de la dynamique.",
         level: "2bac",
-        chapter: "Chapitre 1",
+        chapter: "Mécanique",
         filiere: "SP",
       },
       {
@@ -134,7 +135,7 @@ const run = async () => {
         description:
           "Travail d'une force, théorème énergie cinétique, énergie mécanique.",
         level: "2bac",
-        chapter: "Chapitre 2",
+        chapter: "Mécanique",
         filiere: "SP",
       },
       {
@@ -142,93 +143,84 @@ const run = async () => {
         description:
           "Équations horaires, portée et hauteur maximale d'un projectile.",
         level: "2bac",
-        chapter: "Chapitre 3",
+        chapter: "Mécanique",
         filiere: "SP",
       },
       {
         title: "Mécanique — Oscillations mécaniques libres",
-        description:
-          "Pendule simple, ressort-masse, équation différentielle, période propre.",
+        description: "Pendule simple, ressort-masse, équation différentielle.",
         level: "2bac",
-        chapter: "Chapitre 4",
+        chapter: "Ondes",
         filiere: "SP",
       },
       {
         title: "Mécanique — Oscillations forcées et résonance",
-        description: "Oscillateur forcé, phénomène de résonance en amplitude.",
+        description: "Oscillateur forcé, phénomène de résonance.",
         level: "2bac",
-        chapter: "Chapitre 5",
+        chapter: "Ondes",
         filiere: "SP",
       },
       {
         title: "Électricité — Circuit RC : charge et décharge",
-        description:
-          "Charge et décharge d'un condensateur, constante de temps τ = RC.",
+        description: "Charge et décharge d'un condensateur.",
         level: "2bac",
-        chapter: "Chapitre 6",
+        chapter: "Électricité",
         filiere: "SP",
       },
       {
         title: "Électricité — Circuit RL",
-        description:
-          "Établissement et rupture du courant, énergie stockée dans une bobine.",
+        description: "Établissement et rupture du courant.",
         level: "2bac",
-        chapter: "Chapitre 7",
+        chapter: "Électricité",
         filiere: "SP",
       },
       {
         title: "Électricité — Circuit RLC oscillations libres",
-        description:
-          "Oscillations électriques libres, charge et énergie dans un circuit RLC.",
+        description: "Oscillations électriques libres.",
         level: "2bac",
-        chapter: "Chapitre 8",
+        chapter: "Électricité",
         filiere: "SP",
       },
       {
         title: "Électricité — RLC en régime sinusoïdal forcé",
-        description: "Impédance, résonance d'intensité, facteur de puissance.",
+        description: "Impédance et résonance.",
         level: "2bac",
-        chapter: "Chapitre 9",
+        chapter: "Électricité",
         filiere: "SP",
       },
       {
         title: "Optique — Diffraction et interférences",
-        description:
-          "Diffraction par une fente, interférences lumineuses, longueur d'onde.",
+        description: "Diffraction et interférences lumineuses.",
         level: "2bac",
-        chapter: "Chapitre 10",
+        chapter: "Optique",
         filiere: "SP",
       },
       {
         title: "Chimie — Cinétique chimique",
-        description:
-          "Vitesse de réaction, facteurs : concentration, température, catalyseur.",
+        description: "Vitesse de réaction et facteurs.",
         level: "2bac",
-        chapter: "Chapitre 11",
+        chapter: "Chimie",
         filiere: "SP",
       },
       {
         title: "Chimie — Transformations acido-basiques",
-        description:
-          "Acides et bases Brønsted, pH, Ka et pKa, titrages acido-basiques.",
+        description: "pH, Ka, titrages.",
         level: "2bac",
-        chapter: "Chapitre 12",
+        chapter: "Chimie",
         filiere: "SP",
       },
       {
         title: "Chimie — Réactions d'oxydoréduction",
-        description:
-          "Oxydants, réducteurs, couples redox, piles électrochimiques.",
+        description: "Couples redox et piles.",
         level: "2bac",
-        chapter: "Chapitre 13",
+        chapter: "Chimie",
         filiere: "SP",
       },
       {
         title: "Chimie — Chimie organique",
-        description:
-          "Alcools, aldéhydes, cétones, acides carboxyliques, estérification.",
+        description: "Alcools, acides, esters.",
         level: "2bac",
-        chapter: "Chapitre 14",
+        chapter: "Chimie",
         filiere: "SP",
       },
     ]);
@@ -237,157 +229,143 @@ const run = async () => {
     const cSVT = await Course.bulkCreate([
       {
         title: "Mécanique — Dynamique du point",
-        description:
-          "Lois de Newton appliquées aux contextes biologiques et environnementaux.",
+        description: "Lois de Newton en contexte biologique.",
         level: "2bac",
-        chapter: "Chapitre 1",
+        chapter: "Mécanique",
         filiere: "SVT",
       },
       {
         title: "Mécanique — Travail et énergie",
-        description: "Travail des forces et énergie mécanique en contexte SVT.",
+        description: "Énergie mécanique en SVT.",
         level: "2bac",
-        chapter: "Chapitre 2",
+        chapter: "Mécanique",
         filiere: "SVT",
       },
       {
         title: "Électricité — Circuit RC",
-        description:
-          "Charge et décharge du condensateur, lien avec membranes cellulaires.",
+        description: "Lien avec membranes cellulaires.",
         level: "2bac",
-        chapter: "Chapitre 3",
+        chapter: "Électricité",
         filiere: "SVT",
       },
       {
         title: "Chimie — Réactions acido-basiques",
-        description:
-          "pH sanguin, acides, bases, titrages — applications biologiques.",
+        description: "pH sanguin.",
         level: "2bac",
-        chapter: "Chapitre 4",
+        chapter: "Chimie",
         filiere: "SVT",
       },
       {
         title: "Chimie — Réactions d'oxydoréduction",
-        description:
-          "Oxydants, réducteurs, piles — lien avec la respiration cellulaire.",
+        description: "Respiration cellulaire.",
         level: "2bac",
-        chapter: "Chapitre 5",
+        chapter: "Chimie",
         filiere: "SVT",
       },
       {
         title: "Chimie — Chimie organique",
-        description:
-          "Molécules organiques biologiques : alcools, acides, esters.",
+        description: "Molécules biologiques.",
         level: "2bac",
-        chapter: "Chapitre 6",
+        chapter: "Chimie",
         filiere: "SVT",
       },
     ]);
 
-    // ── 2BAC Sciences Mathématiques A (SMA) ────────────────────────
+    // ── 2BAC SMA ───────────────────────────────────────────────────
     const cSMA = await Course.bulkCreate([
       {
         title: "Mécanique — Dynamique newtonienne",
-        description:
-          "Lois de Newton, application à des systèmes mécaniques complexes.",
+        description: "Lois de Newton avancées.",
         level: "2bac",
-        chapter: "Chapitre 1",
+        chapter: "Mécanique",
         filiere: "SMA",
       },
       {
         title: "Mécanique — Oscillateurs mécaniques",
-        description:
-          "Pendule simple et ressort-masse, résolution des équations diff.",
+        description: "Pendule et ressort.",
         level: "2bac",
-        chapter: "Chapitre 2",
+        chapter: "Ondes",
         filiere: "SMA",
       },
       {
         title: "Mécanique — Chute libre et plan incliné",
-        description:
-          "Équations horaires, vecteur accélération et trajectoires.",
+        description: "Trajectoires.",
         level: "2bac",
-        chapter: "Chapitre 3",
+        chapter: "Mécanique",
         filiere: "SMA",
       },
       {
         title: "Électricité — Circuit RC et RL",
-        description:
-          "Équations différentielles circuits RC et RL, régime transitoire.",
+        description: "Régime transitoire.",
         level: "2bac",
-        chapter: "Chapitre 4",
+        chapter: "Électricité",
         filiere: "SMA",
       },
       {
         title: "Électricité — Circuit RLC",
-        description: "Oscillations électriques, résonance et amortissement.",
+        description: "Oscillations.",
         level: "2bac",
-        chapter: "Chapitre 5",
+        chapter: "Électricité",
         filiere: "SMA",
       },
       {
         title: "Chimie — Cinétique et acido-basique",
-        description: "Vitesse de réaction, pH, Ka, titrages.",
+        description: "pH et vitesse.",
         level: "2bac",
-        chapter: "Chapitre 6",
+        chapter: "Chimie",
         filiere: "SMA",
       },
       {
         title: "Chimie — Oxydoréduction et organique",
-        description:
-          "Piles, couples redox, réactions organiques fondamentales.",
+        description: "Redox.",
         level: "2bac",
-        chapter: "Chapitre 7",
+        chapter: "Chimie",
         filiere: "SMA",
       },
     ]);
 
-    // ── 2BAC Sciences Mathématiques B (SMB) ────────────────────────
+    // ── 2BAC SMB ───────────────────────────────────────────────────
     const cSMB = await Course.bulkCreate([
       {
         title: "Mécanique — Dynamique du point",
-        description:
-          "Lois de Newton, applications dans des systèmes mécaniques variés.",
+        description: "Lois de Newton.",
         level: "2bac",
-        chapter: "Chapitre 1",
+        chapter: "Mécanique",
         filiere: "SMB",
       },
       {
-        title: "Mécanique — Travail, puissance et énergie",
-        description:
-          "Théorème énergie cinétique, conservation de l'énergie mécanique.",
+        title: "Mécanique — Travail et énergie",
+        description: "Énergie mécanique.",
         level: "2bac",
-        chapter: "Chapitre 2",
+        chapter: "Mécanique",
         filiere: "SMB",
       },
       {
         title: "Mécanique — Oscillateurs mécaniques",
-        description: "Pendule et ressort-masse, période et fréquence propre.",
+        description: "Oscillations.",
         level: "2bac",
-        chapter: "Chapitre 3",
+        chapter: "Ondes",
         filiere: "SMB",
       },
       {
         title: "Électricité — Condensateur et bobine",
-        description:
-          "Charge/décharge RC, établissement courant RL, énergie stockée.",
+        description: "RC et RL.",
         level: "2bac",
-        chapter: "Chapitre 4",
+        chapter: "Électricité",
         filiere: "SMB",
       },
       {
         title: "Électricité — Circuit RLC",
-        description: "Oscillations électriques libres et amorties, résonance.",
+        description: "Oscillations.",
         level: "2bac",
-        chapter: "Chapitre 5",
+        chapter: "Électricité",
         filiere: "SMB",
       },
       {
         title: "Chimie — Acido-basique et oxydoréduction",
-        description:
-          "pH, titrages acido-basiques et redox, piles électrochimiques.",
+        description: "pH et redox.",
         level: "2bac",
-        chapter: "Chapitre 6",
+        chapter: "Chimie",
         filiere: "SMB",
       },
     ]);
