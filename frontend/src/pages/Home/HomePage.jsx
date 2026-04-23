@@ -33,7 +33,7 @@ export default function HomePage() {
     { value: "40+", label: "Cours disponibles" },
     { value: "70+", label: "Examens nationaux" },
     { value: "4", label: "Filières couvertes" },
-    { value: "2015", label: "Depuis l'année" },
+    { value: "2008", label: "Depuis l'année" },
   ];
 
   return (

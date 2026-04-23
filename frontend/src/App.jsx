@@ -11,6 +11,13 @@ import CoursesPage from "./pages/courses/CoursesPage";
 import CourseDetailPage from "./pages/courses/CourseDetailPage";
 import ExamsPage from "./pages/examens/ExamsPage";
 import AdminPage from "./pages/admin/AdminPage";
+import CreationCours from "./pages/courses/CreationCours";
+import AdminLayout from "./components/layout/adminLayout";
+import CreationExamens from "./pages/examens/CreationExamens";
+import CreateResourcePage from "./pages/Ressource/CreationRessource";
+
+import CoursesList from "./pages/courses/CourseList";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -35,7 +42,24 @@ export default function App() {
               <Route path="/courses" element={<CoursesPage />} />
               <Route path="/courses/:id" element={<CourseDetailPage />} />
               <Route path="/exams" element={<ExamsPage />} />
-              <Route path="/admin" element={<AdminPage />} />
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminPage />} />
+                <Route
+                  path="/admin/courses/create"
+                  element={<CreationCours />}
+                />
+
+                <Route path="/admin/courses" element={<CoursesList />} />
+
+                <Route
+                  path="/admin/exams/create"
+                  element={<CreationExamens />}
+                />
+                <Route
+                  path="/admin/resources/create"
+                  element={<CreateResourcePage />}
+                />
+              </Route>
             </Routes>
           </main>
           <Footer />

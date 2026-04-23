@@ -3,9 +3,13 @@ import fs from "fs";
 import { fileURLToPath } from "url";
 import NationalExam from "../models/Nationalexamen.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const removeFile = (url) => {
   if (!url) return;
-  const p = path.join(__dirname, "..", url);
+
+  const p = path.join(process.cwd(), url); // ✅ plus fiable
   if (fs.existsSync(p)) fs.unlinkSync(p);
 };
 

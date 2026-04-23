@@ -380,7 +380,6 @@ const run = async () => {
     // 3. RESSOURCES
     // ══════════════════════════════════════════════════════════════
 
-    // Helper : ajouter ressources à un cours et retourner les créées
     const addResources = async (course, list) => {
       const result = [];
       for (let i = 0; i < list.length; i++) {
@@ -394,7 +393,6 @@ const run = async () => {
       return result;
     };
 
-    // ── 1BAC Ch1 : Mouvements ──────────────────────────────────────
     const [, , ex1_1b, ex2_1b] = await addResources(c1bac[0], [
       {
         title: "Cours PDF — Les mouvements",

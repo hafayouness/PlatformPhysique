@@ -118,7 +118,7 @@ export default function ExamsPage() {
           <div className="ep-hero-in">
             <h1 className="ep-title">📋 Examens Nationaux</h1>
             <p className="ep-subtitle">
-              Sujets et corrections de 2015 à 2024 — SP · SVT · SMA · SMB
+              Sujets et corrections de 2008 à 2025 — SP · SVT · SMA · SMB
             </p>
           </div>
         </div>
