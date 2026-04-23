@@ -6,30 +6,6 @@ import { useExams } from "../../hooks/Useexams";
 import { FILIERES } from "../../constants/filieres";
 import clsx from "clsx";
 
-const SIDEBAR_LINKS = [
-  {
-    to: "/admin",
-    icon: "⚡",
-    label: "Dashboard",
-    exact: true,
-  },
-  {
-    to: "/admin/courses",
-    icon: "📚",
-    label: "Cours",
-  },
-  {
-    to: "/admin/exams",
-    icon: "📋",
-    label: "Examens",
-  },
-  {
-    to: "/admin/resources",
-    icon: "📎",
-    label: "Ressources",
-  },
-];
-
 function StatCard({ icon, label, value, sub, gradient }) {
   return (
     <>
@@ -106,7 +82,7 @@ function StatCard({ icon, label, value, sub, gradient }) {
 }
 
 export default function AdminPage() {
-  const { user, isAdmin, logout } = useAuthStore();
+  const { user, isAdmin } = useAuthStore();
   const navigate = useNavigate();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -130,21 +106,21 @@ export default function AdminPage() {
 
   const QUICK_ACTIONS = [
     {
-      to: "/admin/courses",
+      to: "/admin/courses/create",
       icon: "📚",
       label: "Gérer les cours",
       desc: "Créer, modifier, supprimer des cours",
       gradient: "linear-gradient(135deg, #f97316, #ea580c)",
     },
     {
-      to: "/admin/exams",
+      to: "/admin/exams/create",
       icon: "📋",
       label: "Gérer les examens",
       desc: "Ajouter les examens nationaux",
       gradient: "linear-gradient(135deg, #3b82f6, #1d4ed8)",
     },
     {
-      to: "/admin/resources",
+      to: "/admin/resources/create",
       icon: "📎",
       label: "Gérer les ressources",
       desc: "Uploader PDF et vidéos",
@@ -168,7 +144,7 @@ export default function AdminPage() {
 
         /* ── Sidebar ── */
         .sidebar {
-          width: 240px;
+          width: 260px;
           min-height: 100vh;
           background: #ffffff;
           border-right: 1px solid rgba(0,0,0,0.07);
@@ -633,59 +609,6 @@ export default function AdminPage() {
       `}</style>
 
       <div className="admin-root">
-        <div
-          className={`sidebar-overlay ${sidebarOpen ? "open" : ""}`}
-          onClick={() => setSidebarOpen(false)}
-        />
-
-        <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
-          <div className="sidebar-logo">
-            <Link to="/" onClick={() => setSidebarOpen(false)}>
-              <div className="logo-icon">
-                <div className="logo-icon-back" />
-                <div className="logo-icon-front">📘</div>
-              </div>
-              <span className="logo-text">
-                Édu<span>Pc</span>
-              </span>
-            </Link>
-          </div>
-
-          <div style={{ padding: "16px 12px 0" }}>
-            <div className="sidebar-badge">
-              <div className="sidebar-avatar">
-                {user?.name?.charAt(0).toUpperCase() || "A"}
-              </div>
-              <div style={{ minWidth: 0 }}>
-                <div className="sidebar-user-name">{user?.name || "Admin"}</div>
-                <div className="sidebar-user-role">⚙ Administrateur</div>
-              </div>
-            </div>
-          </div>
-
-          <nav className="sidebar-nav">
-            <div className="sidebar-section-label">Navigation</div>
-            {SIDEBAR_LINKS.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setSidebarOpen(false)}
-                className={`sidebar-link ${isActive(l.to, l.exact) ? "active" : ""}`}
-              >
-                <span className="sidebar-link-icon">{l.icon}</span>
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="sidebar-footer">
-            <Link to="/" className="sidebar-home-btn">
-              <span>←</span>
-              Retour au site
-            </Link>
-          </div>
-        </aside>
-
         <main className="admin-main">
           <div className="topbar">
             <span className="topbar-title">Admin Dashboard</span>

@@ -7,6 +7,7 @@ import authRoute from "./routes/autRoute.js";
 import courseRoute from "./routes/CourseRoutes.js";
 import resourceRoute from "./routes/ResourceRoute.js";
 import ExamenRoute from "./routes/NationalExamRoute.js";
+import path from "path";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(
   }),
 );
 app.use(express.json());
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

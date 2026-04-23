@@ -6,16 +6,20 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const FIELD_TO_DIR = {
+  subjectPdf: "subjectPdf",
+  solutionPdf: "solutionPdf",
+  solutionVideo: "solutionVideo",
+  pdf: "pdf",
+  video: "video",
+};
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const type = req.body.type || "misc";
+    const folder = FIELD_TO_DIR[file.fieldname] || "misc";
+    const dir = path.join(__dirname, "..", "uploads", folder);
 
-    const dir = path.join(__dirname, "..", "uploads", type);
-
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-
+    fs.mkdirSync(dir, { recursive: true });
     cb(null, dir);
   },
 
@@ -27,7 +31,6 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
   const allowed = ["application/pdf", "video/mp4", "video/webm", "video/ogg"];
-
   if (allowed.includes(file.mimetype)) {
     cb(null, true);
   } else {
@@ -41,9 +44,7 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({
   storage,
   fileFilter,
-  limits: {
-    fileSize: 200 * 1024 * 1024,
-  },
+  limits: { fileSize: 200 * 1024 * 1024 },
 });
 
 export default upload;
