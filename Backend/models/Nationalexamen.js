@@ -6,7 +6,7 @@ const NationalExam = sequelize.define("NationalExam", {
   title: { type: DataTypes.STRING, allowNull: false },
   year: { type: DataTypes.INTEGER, allowNull: false },
   filiere: {
-    type: DataTypes.ENUM("SP", "SVT", "SMA", "SMB"),
+    type: DataTypes.ENUM("SP", "SVT", "SM"),
     allowNull: false,
   },
   session: {

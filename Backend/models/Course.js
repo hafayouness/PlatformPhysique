@@ -8,7 +8,7 @@ const Course = sequelize.define("Course", {
   level: { type: DataTypes.ENUM("1bac", "2bac"), allowNull: false },
   chapter: { type: DataTypes.STRING, allowNull: false },
   filiere: {
-    type: DataTypes.ENUM("SP", "SVT", "SMA", "SMB", "ALL"),
+    type: DataTypes.ENUM("SP", "SVT", "SM", "ALL"),
     allowNull: false,
     defaultValue: "ALL",
   },
