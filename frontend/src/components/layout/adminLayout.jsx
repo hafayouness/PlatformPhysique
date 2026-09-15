@@ -298,7 +298,7 @@ export default function AdminLayout() {
 
         /* ── Content ── */
         .admin-content {
-          padding: 32px;
+          padding: 22px;
           flex: 1;
         }
 

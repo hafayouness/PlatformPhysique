@@ -24,9 +24,9 @@ export const FILIERES = [
     desc: "Physique-Chimie · Applications biologiques",
   },
   {
-    key: "SMA",
-    label: "Sciences Mathématiques A",
-    short: "SM-A",
+    key: "SM",
+    label: "Sciences Mathématiques ",
+    short: "SM",
     icon: "∑",
     gradient: "from-purple-600/20 to-violet-500/10",
     accent: "text-purple-400",
@@ -34,18 +34,6 @@ export const FILIERES = [
     border: "border-purple-500/20",
     bg: "bg-purple-500/10",
     desc: "Programme approfondi · Équations différentielles",
-  },
-  {
-    key: "SMB",
-    label: "Sciences Mathématiques B",
-    short: "SM-B",
-    icon: "∫",
-    gradient: "from-orange-600/20 to-amber-500/10",
-    accent: "text-orange-400",
-    dot: "bg-orange-400",
-    border: "border-orange-500/20",
-    bg: "bg-orange-500/10",
-    desc: "Physique-Chimie orientée mathématiques",
   },
 ];
 

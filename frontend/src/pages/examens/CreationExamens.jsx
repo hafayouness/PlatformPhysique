@@ -10,8 +10,7 @@ const FILIERES = [
     icon: "🌿",
     full: "Sciences de la Vie et de la Terre",
   },
-  { key: "SMA", label: "SMA", icon: "📐", full: "Sciences Mathématiques A" },
-  { key: "SMB", label: "SMB", icon: "📊", full: "Sciences Mathématiques B" },
+  { key: "SM", label: "SM", icon: "📐", full: "Sciences Mathématiques " },
 ];
 
 const SESSIONS = [

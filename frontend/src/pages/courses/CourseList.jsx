@@ -5,8 +5,7 @@ import { coursesService } from "../../services/CourseService";
 const FILIERES = [
   { key: "SP", label: "SP", icon: "🔬" },
   { key: "SVT", label: "SVT", icon: "🌿" },
-  { key: "SMA", label: "SMA", icon: "📐" },
-  { key: "SMB", label: "SMB", icon: "📊" },
+  { key: "SM", label: "SM", icon: "📐" },
 ];
 
 const LEVELS = ["1bac", "2bac", "TCS"];
@@ -393,6 +392,9 @@ export default function CoursesList() {
           background: #fff; border: 1px solid rgba(0,0,0,0.07);
           border-radius: 20px; overflow: hidden;
           box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        
+  
+
         }
 
         .cl-table { width: 100%; border-collapse: collapse; }
@@ -404,7 +406,7 @@ export default function CoursesList() {
         .cl-table th {
           padding: 12px 16px; text-align: left;
           font-size: 10px; font-weight: 600;
-          letter-spacing: 1.4px; text-transform: uppercase; color: #bbb;
+          letter-spacing: 1.2px; text-transform: uppercase; color: #bbb;
         }
         .cl-table th:last-child { text-align: right; }
 
@@ -446,6 +448,7 @@ export default function CoursesList() {
         .cl-btn-edit:hover {
           background: rgba(249,115,22,0.12); border-color: rgba(249,115,22,0.5);
         }
+          
         .cl-btn-del {
           padding: 7px 14px; border-radius: 10px;
           border: 1.5px solid rgba(239,68,68,0.2);
@@ -802,13 +805,13 @@ export default function CoursesList() {
                           className="cl-btn-edit"
                           onClick={() => setEditCourse(c)}
                         >
-                          ✏️ Modifier
+                          ✏️
                         </button>
                         <button
                           className="cl-btn-del"
                           onClick={() => setDeleteCourse(c)}
                         >
-                          🗑️ Supprimer
+                          🗑️
                         </button>
                       </div>
                     </td>
