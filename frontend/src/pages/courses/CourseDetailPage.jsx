@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useCourse } from "../../hooks/useCourse";
 import { useCoursesFilterStore } from "../../stores/Coursesfilterstore";
 import { Skeleton, ResourceRowSkeleton } from "../../components/ui/Skeleton";
 import { ROUTES } from "../../constants/routes";
+import { useParams, useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const TABS = [
   { key: "all", label: "Tout", icon: "◈" },
@@ -15,6 +16,15 @@ const TABS = [
 ];
 
 const TYPE_ORDER = { pdf: 1, video: 2, exercise: 3, solution: 4, resume: 5 };
+
+const FILES_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000/api"
+).replace(/\/api\/?$/, "");
+
+function resolveFileUrl(fileUrl) {
+  if (!fileUrl) return null;
+  return fileUrl.startsWith("http") ? fileUrl : `${FILES_BASE_URL}${fileUrl}`;
+}
 
 const FILIERE_THEMES = {
   pc: {
@@ -175,6 +185,8 @@ function ResourceItem({ resource, indented = false }) {
   const isVideo = resource.type === "video";
   const cfg = TYPE_CONFIG[resource.type] || TYPE_CONFIG.pdf;
 
+  const fullUrl = resolveFileUrl(resource.fileUrl);
+
   return (
     <>
       <style>{`
@@ -250,19 +262,19 @@ function ResourceItem({ resource, indented = false }) {
         </div>
 
         <div className="ri-actions">
-          {isPdf && resource.fileUrl && (
+          {isPdf && fullUrl && (
             <>
               <button className="ri-btn view" onClick={() => setPdfOpen(true)}>
                 👁 Voir
               </button>
-              <a href={resource.fileUrl} download className="ri-btn download">
+              <a href={fullUrl} download className="ri-btn download">
                 ⬇ Télécharger
               </a>
             </>
           )}
-          {isVideo && resource.fileUrl && (
+          {isVideo && fullUrl && (
             <a
-              href={resource.fileUrl}
+              href={fullUrl}
               target="_blank"
               rel="noreferrer"
               className="ri-btn watch"
@@ -275,7 +287,7 @@ function ResourceItem({ resource, indented = false }) {
 
       {pdfOpen && (
         <PdfModal
-          url={resource.fileUrl}
+          url={fullUrl}
           title={resource.title}
           onClose={() => setPdfOpen(false)}
         />
@@ -286,8 +298,14 @@ function ResourceItem({ resource, indented = false }) {
 
 export default function CourseDetailPage() {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
   const { activeTab, setActiveTab } = useCoursesFilterStore();
   const { data: course, isLoading } = useCourse(id);
+
+  useEffect(() => {
+    const typeFromUrl = searchParams.get("type");
+    setActiveTab(typeFromUrl || "all");
+  }, [id, searchParams]);
 
   if (isLoading)
     return (

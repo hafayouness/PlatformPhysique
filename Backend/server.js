@@ -8,8 +8,12 @@ import courseRoute from "./routes/CourseRoutes.js";
 import resourceRoute from "./routes/ResourceRoute.js";
 import ExamenRoute from "./routes/NationalExamRoute.js";
 import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,6 +27,7 @@ app.use(
 );
 app.use(express.json());
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
+console.log("Serving uploads from:", path.join(__dirname, "uploads"));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

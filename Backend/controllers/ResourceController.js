@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 export const getResourcesByCourse = async (req, res) => {
   try {
     const { type } = req.query;
-    const where = { courseId: res.params.courseId };
+    const where = { courseId: req.params.courseId };
     if (type) {
       where.type = type;
     }

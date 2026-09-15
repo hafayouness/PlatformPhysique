@@ -10,6 +10,7 @@ export const resourcesService = {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((r) => r.data),
+
   update: (id, data) => api.put(`/resources/${id}`, data).then((r) => r.data),
   delete: (id) => api.delete(`/resources/${id}`).then((r) => r.data),
 };
