@@ -9,8 +9,7 @@ const FILIERES = [
   { key: "", label: "Toutes" },
   { key: "SP", label: "SP — Sciences Physiques" },
   { key: "SVT", label: "SVT" },
-  { key: "SMA", label: "SMA — Sciences Maths A" },
-  { key: "SMB", label: "SMB — Sciences Maths B" },
+  { key: "SM", label: "SM — Sciences Maths" },
 ];
 
 const FILIERE_THEMES = {
@@ -28,23 +27,16 @@ const FILIERE_THEMES = {
     icon: "🧬",
     label: "SVT",
   },
-  SMA: {
+  SM: {
     from: "#eff6ff",
     border: "#bfdbfe",
     accent: "#2563eb",
     icon: "📐",
-    label: "SMA",
-  },
-  SMB: {
-    from: "#fdf4ff",
-    border: "#e9d5ff",
-    accent: "#9333ea",
-    icon: "📊",
-    label: "SMB",
+    label: "SM",
   },
 };
 
-const FILIERE_ORDER = ["SP", "SVT", "SMA", "SMB"];
+const FILIERE_ORDER = ["SP", "SVT", "SM"];
 
 export default function ExamsPage() {
   const { filiere, session, setFiliere, setSession, reset } =

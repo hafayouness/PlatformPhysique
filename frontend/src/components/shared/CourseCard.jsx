@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { courseDetail } from "../../constants/routes";
 
 const FILIERE_THEMES = {
-  pc: {
+  sp: {
     from: "#fff7ed",
     to: "#ffedd5",
     border: "#fed7aa",
@@ -20,14 +20,14 @@ const FILIERE_THEMES = {
     icon: "🧬",
     label: "SVT",
   },
-  math: {
+  sm: {
     from: "#eff6ff",
     to: "#dbeafe",
     border: "#bfdbfe",
     accent: "#2563eb",
     dark: "#1d4ed8",
     icon: "📐",
-    label: "Maths",
+    label: "SM",
   },
   eco: {
     from: "#fefce8",

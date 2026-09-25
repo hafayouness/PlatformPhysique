@@ -10,8 +10,7 @@ const FILIERES = [
     icon: "🌿",
     full: "Sciences de la Vie et de la Terre",
   },
-  { key: "SMA", label: "SMA", icon: "📐", full: "Sciences Mathématiques A" },
-  { key: "SMB", label: "SMB", icon: "📊", full: "Sciences Mathématiques B" },
+  { key: "SM", label: "SM", icon: "📐", full: "Sciences Mathématiques " },
 ];
 
 const LEVELS = [
@@ -184,7 +183,7 @@ export default function CreateCoursePage() {
         /* Filière cards */
         .cc-filieres {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 10px;
         }
 
